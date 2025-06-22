@@ -17,3 +17,23 @@
 | 工具调用 | 客户端发起请求，服务器返回结果               | 客户端和服务器都可以发起调用，支持实时数据流 |
 | 状态管理 | 无状态，每次请求独立处理                     | 有状态连接，可在请求之间共享信息             |
 | 错误处理 | 传统的 HTTP 状态码                           | 自定义错误码，支持多语言错误信息             |
+
+### 工作模式
+
+- Stdio：主要用在本地服务上，操作你本地的软件或者本地的文件，比如 Blender 这种就只能用 Stdio 因为他没有在线服务
+- SSE ：主要用在远程服务上，这个服务本身就有在线的 API，比如访问你的谷歌邮件，谷歌日历等。
+
+### 环境安装
+
+1. uvx
+
+```bash
+# windows
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# MacOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. node.js
+   > 建议使用 `asdf` / `nvm` 版本管理器
